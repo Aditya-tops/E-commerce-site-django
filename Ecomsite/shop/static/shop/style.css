@@ -11,3 +11,11 @@
 .dhwani{
     margin-top: 25px;
 }
+
+.fixed-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+

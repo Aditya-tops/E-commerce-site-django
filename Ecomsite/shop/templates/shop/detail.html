@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row align-items-start">
+            <!-- Left Side: Product Image -->
+            <div class="col-md-6 mb-4">
+                <img src="{{ product.image }}" alt="{{ product.title }}" class="card-img-top fixed-img">
+            </div>
+
+            <!-- Right Side: Product Details -->
+            <div class="col-md-6">
+                <h2>{{ product.title }}</h2>
+                <h4 class="text-success">₹ {{ product.price }}</h4>
+
+                {% if product.discount_price %}
+                <h5 class="text-danger">Discount Price: ₹ {{ product.discount_price }}</h5>
+                {% endif %}
+
+                <p class="mt-3">{{ product.description }}</p>
+
+                <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                <a href="/" class="btn btn-secondary mt-3">Back to Shop</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
